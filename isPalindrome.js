@@ -1,19 +1,19 @@
 let s = "A man, a plan, a canal: Panama";
 
 let isPalindrome = function (s) {
-  s = s.replaceAll(",", "");
-  s = s.replaceAll(" ", "");
-  s = s.replaceAll(":", "");
-  s = s.toLowerCase();
+  if (!s.length) return true;
 
-  let sArray = s.split("");
-  let sArrayReverse = sArray.reverse();
-  if (sArray === sArrayReverse) {
-    return true;
-  }
-  if (sArray !== sArrayReverse) {
-    return false;
-  }
+  const alphaNumeric = filterAlphaNumeric(s);
+  const reversed = reverse(alphaNumeric);
+
+  return alphaNumeric === reversed;
 };
+
+const filterAlphaNumeric = (
+  s,
+  nonAlphaNumeric = new RegExp("[^a-zA-Z0-9]", "gi")
+) => s.toLowerCase().replace(nonAlphaNumeric, "");
+
+const reverse = (s) => s.split("").reverse().join("");
 
 console.log(isPalindrome(s));
