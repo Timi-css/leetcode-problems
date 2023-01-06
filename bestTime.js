@@ -1,13 +1,19 @@
-let prices = [7, 1, 5, 3, 6, 4];
+let prices = [7, 6, 4, 3, 1];
 
 let maxProfit = function (prices) {
-  for (i = 0; i < prices.length; i++) {
-    let price = prices[i];
+  let [left, right, max] = [0, 1, 0];
+
+  while (right < prices.length) {
+    const canSlide = prices[right] <= prices[left];
+    if (canSlide) left = right;
+
+    const window = prices[right] - prices[left];
+
+    max = Math.max(max, window);
+    right++;
   }
-};
-let maxPrice = function (prices) {
-  return Math.max(...prices);
+
+  return max;
 };
 
-console.log(maxPrice(prices));
 console.log(maxProfit(prices));
