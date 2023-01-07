@@ -7,13 +7,13 @@
 
 let nums = [2, 7, 11, 15];
 
-var twoSum = function (nums, target) {
+var twoSum = function (nums, targets) {
   let storage = {};
   for (let [index, num] of nums.entries()) {
     if (storage[num] !== undefined) {
       return [storage[num], index];
     } else {
-      storage[target - num] = index;
+      storage[targets - num] = index;
     }
   }
 };
