@@ -1,8 +1,10 @@
 let s = "()[]{}";
 let isValid = function (s) {
-  for (i = 0; i < s.length; i++) {
-    let isTrue = s[i].includes("()", "[]", "{}");
-    if (isTrue) {
+  let sArray = s.toString().split(",");
+
+  console.log(sArray);
+  for (i = 0; i < sArray.length; i++) {
+    if (sArray[i] === "()" || "[]" || "{}") {
       return true;
     }
     return false;
