@@ -6,16 +6,29 @@ Specifically, ans is the concatenation of two nums arrays.
 Return the array ans.
 */
 
-let nums = [1, 2, 3];
+let nums = [1, 2, 1];
 const getConcatenation = function (nums) {
-  let ans = [];
+  // Initial Solution
+  //   for (let i = 0; i < nums.length; i++) {
+  // let ans = [];
+  //     const num = nums[i];
+  //     console.log(num);
+  //     ans.push(num);
+  //     ans.unshift(nums[i]);
+  //   }
+  //   return ans;
 
-  for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
-    console.log(num);
-    ans.push(num);
-    ans.unshift(nums[i]);
+  // Final Solution
+  let ans = [2 * nums.length];
+
+  for (let i = 0; i < 2 * nums.length; i++) {
+    if (i < nums.length) {
+      ans[i] = nums[i];
+    } else {
+      ans[i] = nums[i - nums.length];
+    }
   }
   return ans;
 };
+
 console.log(getConcatenation(nums));
