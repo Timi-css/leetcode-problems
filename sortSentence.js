@@ -29,5 +29,9 @@ const sortSentence = function (s) {
 };
 
 console.log(sortSentence(s));
+/*  Comments 
+Runtime: 48ms
+MemoryUsage: 42.16MB
 
-// Output: ["This", "1", "is", "2", "sentence", "
+Notes: Look to optimize solution in future to use less runtime and space, most importantly space
+*/
