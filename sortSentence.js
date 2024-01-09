@@ -1,23 +1,15 @@
-let s = "is2 sentence4 This1 a3";
-
-function isolateInteger(str) {
-  const match = str.match(/\d+/);
-  return match ? match[0] : null;
-}
+let s = "Myself2 Me1 I4 and3";
 
 const sortSentence = function (s) {
   //   let sortedS = [];
   let sArr = [];
 
-  sArr = s.split(" ");
-
-  //   for (let i = 0; i < sArr.length; i++) {
-  //     if (/\d/.test(sArr[i])) {
-  //       let index = isolateInteger(sArr[i]);
-  //       sArr.sort(index);
-  //       console.log(sArr);
-  //     }
+  //   function concatenateString(arr) {
+  //     let concatString = arr.join(" ");
+  //     return concatString;
   //   }
+
+  sArr = s.split(" ");
 
   function compareByNumber(a, b) {
     const numberA = parseInt(a.match(/\d+/)[0], 10);
@@ -27,7 +19,13 @@ const sortSentence = function (s) {
   }
 
   sArr.sort(compareByNumber);
-  return sArr;
+  let newSarr = [];
+  for (let i of sArr) {
+    let newS = i.replace(/\d/g, "");
+    newSarr.push(newS);
+  }
+  let result = newSarr.join(" ");
+  return result;
 };
 
 console.log(sortSentence(s));
