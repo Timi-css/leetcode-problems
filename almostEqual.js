@@ -4,8 +4,8 @@ Problem: Given two strings of equal length, swap the indices/character of a stri
 Example: s1 = "bank", s2 = "kanb". Swap s2[0] and s2[3] to produce the string s1. Output will be true
 */
 
-let s1 = "bank";
-let s2 = "kanb";
+let s1 = "siyolsdcjthwsiplccjbuceoxmpjgrauocx";
+let s2 = "siyolsdcjthwsiplccpbuceoxmjjgrauocx";
 
 function areAlmostequal(s1, s2) {
   //  push string into arrays for easier manipulation
