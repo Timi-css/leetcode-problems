@@ -13,7 +13,6 @@ const removeElement = function (nums, val) {
 
     console.log(nums.pop(unwantedVal[i]));
   }
-  console.log("Should return here");
 };
 
 console.log(removeElement(nums, val));
