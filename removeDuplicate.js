@@ -13,20 +13,19 @@ const removeDuplicates = function (nums) {
   //     }
   //   }
   //   return expectedNums;
-  left = 0;
-  right = 1;
+  left = 1;
 
-  while (right < nums.length) {
-    if (nums[left] == nums[right]) {
-      let removedElement = nums.splice(right, 1)[0];
-      right++;
-      nums.push(removedElement);
-    } else {
+  if (nums.length < 1) {
+    return 0;
+  }
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] !== nums[i + 1]) {
+      nums[left] = nums[i + 1];
       left++;
-      nums[left] = nums[right];
     }
   }
-  return nums;
+  return left;
 };
 
 console.log(removeDuplicates(nums));
