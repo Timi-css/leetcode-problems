@@ -18,7 +18,9 @@ const removeDuplicates = function (nums) {
 
   while (right < nums.length) {
     if (nums[left] == nums[right]) {
+      let removedElement = nums.splice(right, 1)[0];
       right++;
+      nums.push(removedElement);
     } else {
       left++;
       nums[left] = nums[right];
